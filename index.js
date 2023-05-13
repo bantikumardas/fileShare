@@ -16,7 +16,7 @@ const corsOptions={
 app.use(cors(corsOptions));
 
 const fetchData=require('./script');
-setInterval(fetchData, 1000*60*60);
+setInterval(fetchData, 1000*60*5);
 
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');

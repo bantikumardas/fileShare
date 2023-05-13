@@ -24,13 +24,13 @@ app.use(express.static('public'));
 
 
 //routes
-app.use('/', (req, res)=>{
-    res.json({message:"hello this is banti"});
-});
+
 app.use('/api/files', require('./routes/files'));
 app.use('/files', require('./routes/show'));
 app.use('/files/download', require('./routes/download'));
-
+app.use('/', (req, res)=>{
+    res.json({message:"hello this is banti"});
+});
 app.listen(PORT, ()=>{
     console.log(`server is running at port no ${PORT}`);
 })

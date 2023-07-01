@@ -13,10 +13,11 @@ connectDB();
 const corsOptions={
     origin: process.env.ALLOWED_CLIENTS.split(",")
 }
-app.use(cors(corsOptions));
+app.use(cors());
+app.options('*', cors());
 
 const fetchData=require('./script');
-setInterval(fetchData, 1000*60*5);
+setInterval(fetchData, 1000*60*1);
 
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');

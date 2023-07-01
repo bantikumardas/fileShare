@@ -4,7 +4,7 @@ const fs = require('fs');
 
 async function fetchData() {
     // 24 hours 
-    const pastDate = new Date(Date.now() - 1000 * 60 *60*24);
+    const pastDate = new Date(Date.now() - 1000 * 60*1);
     console.log("called");
     const files =await File.find({ createdAt: { $lt: pastDate } });
     console.log(files.length);

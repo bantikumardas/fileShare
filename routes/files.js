@@ -28,11 +28,13 @@ router.post('/', (req, res)=>{
     //store file
     upload(req, res, async (err)=>{
         // validate request
-    
+        
         if(!req.file){
+            console.log(`${req.file} no file`);
             return res.json({error : 'All filed are required'});
         }
         if(err){
+            console.log(`some error occured`)
             return res.status(500).send({error: err.message}); // dought
         }
         // store into database
